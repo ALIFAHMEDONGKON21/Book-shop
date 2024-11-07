@@ -13,6 +13,7 @@ import {
 import Root from './components/Root/Root.jsx';
 import Home from './components/Home/Home.jsx';
 import Dasborad from './components/Dasborad/Dasborad.jsx';
+import Bookdetails from './components/Bookdetails/Bookdetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
         path: '/',
         element:<Home></Home>,
       },
+      {
+       path:'books/:bookId',
+       element:<Bookdetails></Bookdetails>,
+       loader :()=>fetch('/public/books.json')
+      },
+     
       {
         path: 'Dasborad',
         element:<Dasborad></Dasborad>,
